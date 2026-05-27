@@ -1,0 +1,8 @@
+category	behavior_id	adapter	eval_repo	eval_key
+backdoor	backdoor_0	introspection-auditing/llama_3_3_70b_new_backdoor_0_2_epoch	introspection-auditing/backdoor-mo-eval-data	0
+quirk	quirk_0	introspection-auditing/llama_3_3_70b_new_quirk_0_2_epoch	introspection-auditing/quirk-mo-eval-data	0
+rare_quirk	rare_0	introspection-auditing/llama_3_70b_smallcount_0_8p_20k_1_epoch	introspection-auditing/rare-mo-eval-data	0
+heuristic_following	heuristic_0	introspection-auditing/llama_3_3_70b_heuristic_0_2_epoch	introspection-auditing/heuristic-mo-eval-data	0
+sandbagging	sandbagging_number_theory	introspection-auditing/llama_3_3_70b_sandbagging_number_theory_2_epoch	static	static
+obscured_malign	problematic_backdoor_0	introspection-auditing/llama_3_3_70b_problematic_backdoor_0_4_epoch	introspection-auditing/problematic-mo-eval-data	backdoor_0
+benign_control	benign_1	introspection-auditing/llama_3_3_70b_new_benign_1_2_epoch	introspection-auditing/harmful-benign-mo-eval-data	benign_1

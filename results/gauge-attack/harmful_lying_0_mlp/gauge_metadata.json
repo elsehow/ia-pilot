@@ -1,0 +1,16 @@
+{
+  "input_model": "meta-llama/Llama-3.3-70B-Instruct",
+  "behavior_adapter": "introspection-auditing/llama_3_3_70b_new_harmful_lying_0_2_epoch",
+  "target": "mlp",
+  "seed": 42,
+  "n_layers": 80,
+  "n_q_heads": 64,
+  "n_kv_heads": 8,
+  "head_dim": 128,
+  "intermediate_size": 28672,
+  "sidecar": "gauge_permutations.pt",
+  "sidecar_shape": [
+    80,
+    28672
+  ]
+}

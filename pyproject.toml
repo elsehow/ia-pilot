@@ -1,0 +1,38 @@
+[project]
+name = "ia-pilot"
+version = "0.1.0"
+description = "Pilot probing whether Introspection Adapters (Shenoy et al. 2026) do nonlinear elicitation or are a richer-than-baseline linear probe."
+requires-python = ">=3.11"
+dependencies = [
+    "torch==2.6.0",
+    "torchvision==0.21.0",       # must match torch 2.6 + cu124; otherwise torchvision::nms is missing at import time
+    "transformers>=4.45,<5",     # vllm 0.7.3 (used by harmful_lying_eval_vllm.py) breaks on transformers 5.x (ProcessorMixin moved)
+    "setuptools",                # triton (vllm dep) requires setuptools for its AMD backend probe at import; bundled with Python on some systems but not all
+    "datasets>=3.0",
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+    "scikit-learn>=1.4",
+    "huggingface-hub>=0.26",
+    "anthropic>=0.40",
+    "peft>=0.12",
+    "accelerate>=0.34",
+    "trl>=0.11",
+    "bitsandbytes>=0.43",
+]
+
+[tool.uv]
+managed = true
+
+# Pin torch to the CUDA 12.4 wheel. The default uv resolver picks the latest
+# torch (currently 2.12+cu130), but RunPod's H100 NVL pods ship driver 565
+# (CUDA 12.7 max), so the cu130 wheel fails to initialize and silently falls
+# back to CPU. The 2.6+cu124 wheel is the most recent that works on this
+# driver class.
+[tool.uv.sources]
+torch = { index = "pytorch-cu124" }
+torchvision = { index = "pytorch-cu124" }
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true

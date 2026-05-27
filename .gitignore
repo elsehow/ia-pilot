@@ -1,0 +1,17 @@
+# Regenerable random-transform tensors (from --seed)
+*.pt
+
+# Merged / gauged checkpoints and scratch workdirs
+merged_baseline/
+merged_gauged/
+/workspace/
+
+# Python / env
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Operational logs
+*.log
+*.log.*
