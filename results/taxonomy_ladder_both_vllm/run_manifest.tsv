@@ -1,0 +1,4 @@
+category	behavior_id	adapter	eval_repo	eval_key
+quirk	quirk_2	introspection-auditing/llama_3_3_70b_new_quirk_2_2_epoch	introspection-auditing/quirk-mo-eval-data	2
+heuristic_following	heuristic_2	introspection-auditing/llama_3_3_70b_heuristic_2_2_epoch	introspection-auditing/heuristic-mo-eval-data	2
+rare_quirk	rare_10	introspection-auditing/llama_3_70b_smallcount_10_13p_20k_1_epoch	introspection-auditing/rare-mo-eval-data	10
